@@ -33,7 +33,7 @@ for card in hand:
             
 def pair():
     for card in ranks:
-       if ranks.count(card) == 2:
+       if ranks.count(card) == 2 and card not in pairs:
             print(card + "you have a pair")
             return True
             
@@ -58,6 +58,8 @@ def five_of_akind():
     for card in ranks:
         if ranks.count(card) ==5:
             return True
+        elif: 
+            return False
             
    
 def full_house():
@@ -65,6 +67,33 @@ def full_house():
         print("you have a full house")
         return True
         
+        
+def straight(len(ranks)):
+    if ranks[i] == "j"
+        ranks[i] == 11
+    elif ranks[i]== "Q"
+        ranks[i] == 12
+    elif ranks[i] == "K"
+        ranks[i] == 13
+    elif ranks[i] == "A"
+        ranks[i] == 14
+    else:
+        ranks[i] = int(ranks[i])
+    if (int(ranks[4]) - ranks[0] ==4):
+        return True
+    else: 
+        return False
+        
 def flush():
-    for ranks in list:
-        card.index["J"] = 11 
+    if mysuits.count = 5:
+        print("you have a flush")
+        
+        
+        
+if__name__==__"main"__:
+    deck = pokerDeck()
+    hand = []
+    hand deal_hand(deck)
+    ranks = []
+
+        
