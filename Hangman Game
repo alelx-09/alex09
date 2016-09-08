@@ -1,0 +1,143 @@
+Hangman Game¶
+Hidden words
+The guesses
+display correct guesses
+display hangman
+player: computer vs. Human (human gussesing)
+words for guessing
+In [ ]:
+import random
+def get_word_list():
+    word_list = []
+    with open ("hangman words.txt", 'r') as infile:
+        for word in infile:
+            word_list.append(word.rstrip() .lower())
+    return word_list
+In [ ]:
+HANGMANPICS = ['''
+
+     +---+
+     |   |
+         |
+         |
+         |
+         |
+  =========''', '''
+ 
+    +---+
+    |   |
+    O   |
+        |
+        |
+        |
+  =========''', '''
+ 
+    +---+
+    |   |
+    O   |
+    |   |
+        |
+        |
+  =========''', '''
+ 
+    +---+
+    |   |
+    O   |
+   /|   |
+        |
+        |
+  =========''', '''
+ 
+    +---+
+    |   |
+    O   |
+   /|\  |
+        |
+        |
+  =========''', '''
+ 
+    +---+
+    |   |
+    O   |
+   /|\  |
+   /    |
+        |
+  =========''', '''
+ 
+    +---+
+    |   |
+    O   |
+   /|\  |
+   / \  |
+        |
+  =========''']
+In [ ]:
+print(HANGMANPICS[2])
+How to play hangman
+player 1 (computer) chooses a word
+p1 draw hint dashes for each letter ( _ )need lenght of hidden word
+player 2 (human) guesses
+player 1 checks to see if hidden word contains the guess
+if it dose contain, then p1 writes the guess in the appropriatw spots
+if not, draw next body spot
+check for win or loss
+if not win or lose, go back to step 3.
+In [ ]:
+def guess_in_target(guess):
+    return guess in target_word
+In [ ]:
+def find_guess(g_list, userGuess):
+    if userGuess in target_word:
+        for i, ch in enumerate(target_word):
+            if ch == userGuess:
+                g_list[i]= userGuess
+    return g_list
+    
+   
+In [ ]:
+def have_won(guessed_list):
+    if '_' in guessed_list:
+        return False
+    else:
+        return True
+    
+In [ ]:
+def have_lost(wrong_guesses):
+    if len(wrong_guesses) == len(HANGMANPICS):
+        return True
+    else:
+        return False
+        
+In [ ]:
+def game_loop(guessed_list):
+    wrong_guesses = []
+    while not have_won(guessed_list) and not have_lost(wrong_guesses):
+        guess = input("enter a letter: ")
+        if guess_in_target(guess):
+            guessed_list = find_guess(guessed_list, guess)
+        else:
+            wrong_guesses.append(guess)
+            wrong_index = len(wrong_guesses)
+            print(HANGMANPICS[wrong_index])
+            print("correct guesses: " + str(guessed_list),"wrong guesses: "+ str(wrong_guesses))
+   
+
+        
+        
+In [ ]:
+def vaild_input():
+    guess = input("enter your guess: ")
+    guess = guess.lower()
+    while not str.isalpha(guess) or len(guess) > 1:
+        print("Bad input jerk try again")
+        guess = input("enter your guess: ")
+    return guess
+In [ ]:
+if __name__ == '__main__':
+    
+    word_list = get_word_list()
+    target_word = random.choice(word_list)
+    target_length = len(target_word)
+    guessed_list = ['_'] * target_length
+    game_loop(guessed_list)
+    
