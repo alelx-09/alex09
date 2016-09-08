@@ -1,0 +1,38 @@
+def encoode():
+messege = input("enter a word to encode: ")
+letters = "abcdefghijklmopqrstuvwxyz"
+key = int(intput("enter a number shift")
+cipher = " "
+
+for x in messege:
+  if x in letters:
+    cipher += letters[(letters.index(x)+key)%(len(letters))]
+    
+print("your messege is" + cipher)
+
+
+
+def decoode():
+messege = input("enter a word to encode: ")
+letters = "abcdefghijklmopqrstuvwxyz"
+key = int(intput("enter a number shift")
+cipher = " "
+
+for x in messege:
+  if x in letters:
+    cipher += letters[(letters.index(x)-key)%(len(letters))]
+    
+print("your messege is" + cipher)
+
+
+if__name__=="__main__":
+choice - 1
+  while choice != 3:
+    choice = int(input("would you like to /n /t1. encrypt decrypt/n exix/n)
+    if choice == 1:
+      encode()
+    elif choice == 2:
+      decode()
+    else:
+    print ("invalid option")
+
