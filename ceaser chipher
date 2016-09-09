@@ -28,7 +28,7 @@ print("your messege is" + cipher)
 if__name__=="__main__":
 choice - 1
   while choice != 3:
-    choice = int(input("would you like to /n /t1. encrypt decrypt/n exix/n)
+    choice = int(input("would you like to /n /t1. encrypt decrypt/n exix/n):
     if choice == 1:
       encode()
     elif choice == 2:
