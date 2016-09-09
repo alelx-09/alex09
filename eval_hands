@@ -1,8 +1,9 @@
 Enter file contents herefrom Midterm_Poker import * 
-from pokerdeck import * 
+from pokerdeck import *
+from poker_eval import*
  
   def test_deal_hand(): 
-   assert(len(deal_hand())) == 5 
+   assert(len(deal_hand()) == 5 )
      
  def test_pairs(): 
      pair_hand = [Card(rank='9', suit='♥'), Card(rank='9', suit='♦'), Card(rank='10', suit='♦'), Card(rank='K', suit='♣'), Card(rank='J', suit='♦')] 
@@ -19,9 +20,8 @@ from pokerdeck import *
      assert three_of_a_kind(hand) == 1
       
  def test_four_of_a_kind(): 
-     hand = [Card(rank='4', suit='♦'), Card(rank='5', suit='♦'), Card(rank='5', suit='♥'), Card(rank='5', suit='♠'), 
-              Card(rank='5', suit='2')] 
-     assert four_of_a_kind(hand) == 4 
+     hand = [Card(rank='4', suit='♣'), Card(rank='5', suit='♠'), Card(rank='5', suit='♦'), Card(rank='5', suit='♦'), Card(rank='7', suit='♥') 
+     assert four_of_a_kind(hand) == 1 
       
  def test_five_of_a_kind(): 
      hand = [Card(rank='3', suit='♦'), Card(rank='3', suit='♦'), Card(rank='3', suit='♥'), Card(rank='3', suit='♠'), 
@@ -29,5 +29,17 @@ from pokerdeck import *
      assert five_of_a_kind(hand) == 5 
       
  def test_straight(): 
-     hand = [Card(rank='A', suit='♦'), Card(rank='K', suit='♦'), Card(rank='Q', suit='♦'), Card(rank='J', suit='♦'), Card(rank='10', suit='♦')] 
+     hand = [Card(rank='4', suit='♣'), Card(rank='9', suit='♣'), Card(rank='6', suit='♣'), Card(rank='2', suit='♣'), Card(rank='8', suit='♣')] 
+     assert straight(hand) == 1 
+ 
+ def test_flush(): 
+     hand = [Card(rank='4', suit='♣'), Card(rank='5', suit='♣'), Card(rank='6', suit='♣'), Card(rank='7', suit='♣'), Card(rank='8', suit='♣')] 
+     assert straight(hand) == 1 
+     
+ def test_full_house(): 
+     hand = [Card(rank='4', suit='♣'), Card(rank='4', suit='♣'), Card(rank='4', suit='♦'), Card(rank='7', suit='♣'), Card(rank='7', suit='♥')] 
+     assert straight(hand) == 1 
+     
+ def test_straight_flush(): 
+     hand = [Card(rank='4', suit='♣'), Card(rank='5', suit='♣'), Card(rank='6', suit='♣'), Card(rank='7', suit='♣'), Card(rank='8', suit='♣')] 
      assert straight(hand) == 1 
