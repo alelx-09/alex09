@@ -40,19 +40,19 @@ def pair():
             
             
 
-def three_of_akind():
-    for card in ranks:
-        if ranks.count(card) == 3:
-            print(card + "you have a pair")
-            print("you have three of a kind")
-            return True
+def three_of_a_kind(rank_list):
+    rank_list.sort()
+    for card in rank_list:
+        if rank_list.count(card)== 3
+        return 3
+    retun 0
             
         
-def four_of_akind():
+def four_of_akind(rank_list):
     for card in ranks:
         if ranks.count(card) == 4:
-           print("you have four of a kind")
-           return True
+           return 7 
+        return 0
             
 def five_of_akind():
     for card in ranks:
@@ -63,9 +63,10 @@ def five_of_akind():
             
    
 def full_house():
-    if pair() and three_of_akind():
-        print("you have a full house")
-        return True
+    if pair() and three_of_akind(rank_list):
+      if find_pairs(rank_list) == 2 and three_of_a_kind(rank_list):
+          return 6 
+         return 0
         
         
 def straight(len(ranks)):
@@ -87,7 +88,16 @@ def straight(len(ranks)):
 def flush():
     if mysuits.count = 5:
         print("you have a flush")
-        
+    
+def straight_flush(rank_list, hand):
+    if straight(rank_list) and flush(hand):
+        return 8
+    return 0
+
+def evaluate_hand(rank_list, hand):
+    best_hand = find_pairs(rank_list)
+    best_hand = 3 
+    
         
         
 if__name__==__"main"__:
