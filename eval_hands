@@ -26,7 +26,7 @@ from poker_eval import*
  def test_five_of_a_kind(): 
      hand = [Card(rank='3', suit='♦'), Card(rank='3', suit='♦'), Card(rank='3', suit='♥'), Card(rank='3', suit='♠'), 
               Card(rank='3', suit='♠')] 
-     assert five_of_a_kind(hand) == 5 
+     assert five_of_a_kind(hand) == 1
       
  def test_straight(): 
      hand = [Card(rank='4', suit='♣'), Card(rank='9', suit='♣'), Card(rank='6', suit='♣'), Card(rank='2', suit='♣'), Card(rank='8', suit='♣')] 
