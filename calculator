@@ -1,0 +1,50 @@
+print("a simple calculator")
+print("")
+
+print("this is a simple calculator")
+print("you can add subtrac or multiply")
+   
+
+while True: 
+    print("choices")
+    print("Enter 'add' to add two numbers")
+    print("Enter subtract to subtract two numbers")
+    print("Enter multiply to multiply two numbers")
+    print("Enter divide to divide two numbers")
+    print("quit to end the program")
+    user_input = input("_")
+    
+    if user_input == ("quit"):
+        break
+
+    elif user_input == ("add"):
+        number1 = float(input("enter a number to add"))
+        number2 = float(input("enter a number to add"))
+        result = str(number1 + number2)
+    print("the answer is" + result)
+    
+    
+    elif user_input == ("subtract"):
+        number1 = float(input("enter a number to subtract"))
+        number2 = float(input("enter a number to subtract"))
+        result = str(number1 + number2)
+    print("the answer is" + result)
+        
+        
+ elif user_input == ("multiply"):
+    number1 = float(input("enter a number to multiply"))
+    number2 = float(input("enter a number to multipy"))
+    result = str(number1 + number2)
+print("the answer is" + result)
+                
+                
+elif user_input == ("divide"):
+    number1 = float(input("enter a number to divide"))
+    number2 = float(input("enter a number to divide"))
+    result = str(number1 + number2)
+print("the answer is" + result)
+
+else:
+    print("unknown input")
+    
+    
