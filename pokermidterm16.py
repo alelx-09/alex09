@@ -96,14 +96,20 @@ def straight_flush(rank_list, hand):
 
 def evaluate_hand(rank_list, hand):
     best_hand = find_pairs(rank_list)
-    best_hand = 3 
+    best_hand = 3 if three_of_a_kind(ranks_list)> best_hand else best hand
+    best_hand = 4 if straight(rank_list) > best_hand else best_hand
+    best_hand = 5 if flush(hand)>best_hand else best_hand
+    best_hand = 6 if full_house(rank_list) > best_hand else best_hand
+    best_hand = 7 if foour_of_a_kind(rank_list) best_hand > best_hand
+    best_hand = 8 if straight_flush(rank_list,hand) > best_hand else best_hand
     
         
         
 if__name__==__"main"__:
     deck = pokerDeck()
-    hand = []
-    hand deal_hand(deck)
-    ranks = []
+    shufle(deck)
+    hand = deal_hand(deck)
+    ranks_list = get_ranks(hand)
+    evaluate_hand(rank_list,hand)
 
         
